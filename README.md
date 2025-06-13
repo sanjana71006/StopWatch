@@ -25,14 +25,17 @@ A sleek, responsive and interactive stopwatch web app built with ❤️ using **
 - ⚙️ JavaScript ES6  
 
 ---
-
 ## 📸 Screenshots
 
-![Screenshot 1](https://github.com/user-attachments/assets/40e69e22-38cc-4522-b564-958dec3d8073)
-![Screenshot 2](https://github.com/user-attachments/assets/9181529e-3c29-4032-8252-02d58b369124)
-![Screenshot 3](https://github.com/user-attachments/assets/6985d870-0c36-4aa8-9da1-71788668df6a)
+<div align="center">
 
+<img src="https://github.com/user-attachments/assets/40e69e22-38cc-4522-b564-958dec3d8073" width="400" alt="Screenshot 1"/>
 
+<img src="https://github.com/user-attachments/assets/9181529e-3c29-4032-8252-02d58b369124" width="400" alt="Screenshot 2"/>
+
+<img src="https://github.com/user-attachments/assets/6985d870-0c36-4aa8-9da1-71788668df6a" width="400" alt="Screenshot 3"/>
+
+</div>
 
 ---
 
