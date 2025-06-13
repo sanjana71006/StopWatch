@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3D Stopwatch</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>3D Stopwatch</h1>
+
+    <div class="top-controls">
+      <div class="themes">
+        <button class="theme-btn" data-theme="light">Light</button>
+        <button class="theme-btn" data-theme="dark">Dark</button>
+        <button class="theme-btn" data-theme="solarized">Solarized</button>
+      </div>
+      <button class="help-btn" id="help">Help</button>
+    </div>
+
+    <div class="watch-container">
+      <div class="watch">
+        <div class="needle" id="needle"></div>
+        <div class="center-dot"></div>
+      </div>
+      <div id="display" class="display">00:00:00.000</div>
+    </div>
+
+    <div class="controls">
+      <button id="start">Start</button>
+      <button id="pause">Pause</button>
+      <button id="reset">Reset</button>
+      <button id="lap">Lap</button>
+      <button id="export">Export CSV</button>
+    </div>
+
+    <ul id="laps" class="laps"></ul>
+
+    <audio id="beep" src="beep.mp3" preload="auto" loop></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+:root {
+  --bg: #f0f0f0;
+  --text: #222;
+  --accent: #007bff;
+  --watch: #ffffff;
+  --needle: #ff3c00;
+  --control: #444;
+  --lap-bg: #e0e0e0;
+  --lap-text: #111;
+}
+
+/* Dark Theme */
+body.dark {
+  --bg: #1e1e1e;
+  --text: #f0f0f0;
+  --accent: #0dcaf0;
+  --watch: #2e2e2e;
+  --needle: #ff5555;
+  --control: #333;
+  --lap-bg: #444;
+  --lap-text: #eee;
+}
+
+/* Solarized Theme */
+body.solarized {
+  --bg: #fdf6e3;
+  --text: #586e75;
+  --accent: #b58900;
+  --watch: #eee8d5;
+  --needle: #cb4b16;
+  --control: #657b83;
+  --lap-bg: #eee8d5;
+  --lap-text: #586e75;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 2rem;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 500px;
+  width: 90%;
+  padding: 1.5rem;
+  background-color: var(--watch);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: background 0.3s;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+/* Top bar: Themes and Help */
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.themes {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.theme-btn,
+.help-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--control);
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.theme-btn:hover,
+.help-btn:hover {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+/* Stopwatch Display */
+.watch-container {
+  position: relative;
+  margin: 2rem auto;
+}
+
+.watch {
+  width: 200px;
+  height: 200px;
+  border: 8px solid var(--accent);
+  border-radius: 50%;
+  margin: 0 auto;
+  background: radial-gradient(circle, var(--watch) 60%, var(--bg));
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.needle {
+  width: 2px;
+  height: 90px;
+  background-color: var(--needle);
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: rotate(0deg);
+  transform-origin: bottom center;
+  transition: transform 0.02s linear;
+}
+
+.center-dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--needle);
+  border-radius: 50%;
+  position: absolute;
+  top: 94px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+/* Digital Display */
+.display {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* Controls */
+.controls {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.controls button {
+  padding: 10px 18px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--accent);
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+/* Default hover */
+.controls button:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+/* Theme-specific hover fixes */
+body.dark .controls button:hover,
+body.dark .theme-btn:hover,
+body.dark .help-btn:hover {
+  background-color: #0aa2c0;
+  color: #fff;
+}
+
+body.solarized .controls button:hover,
+body.solarized .theme-btn:hover,
+body.solarized .help-btn:hover {
+  background-color: #a17800;
+  color: #fff;
+}
+
+body:not(.dark):not(.solarized) .controls button:hover,
+body:not(.dark):not(.solarized) .theme-btn:hover,
+body:not(.dark):not(.solarized) .help-btn:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+/* Laps */
+.laps {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+  max-height: 200px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.laps li {
+  background-color: var(--lap-bg);
+  padding: 8px 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  color: var(--lap-text);
+  font-family: monospace;
+  font-size: 0.95rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .watch {
+    width: 150px;
+    height: 150px;
+  }
+
+  .needle {
+    height: 70px;
+  }
+
+  .display {
+    font-size: 1.3rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controls button,
+  .theme-btn,
+  .help-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .top-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+}
